@@ -53,6 +53,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends curl && rm -rf 
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/.next/browser ./.next/browser
 
 # Adjust permissions
 RUN chown -R nextjs:nodejs /app
