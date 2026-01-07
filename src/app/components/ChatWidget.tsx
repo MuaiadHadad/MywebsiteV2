@@ -8,6 +8,13 @@ import DOMPurify from "isomorphic-dompurify";
 type Msg = { id: string; role: "user" | "bot"; text: string; ts: number };
 type ChatMessage = { role: "system" | "user" | "assistant"; content: string };
 
+const makeId = () => {
+    const g = (globalThis as any)?.crypto?.randomUUID;
+    if (typeof g === "function") return g();
+    // Fallback for older browsers without crypto.randomUUID
+    return `id-${Math.random().toString(36).slice(2, 10)}-${Date.now()}`;
+};
+
 export default function ChatWidget() {
     const [open, setOpen] = useState(false);
     const [text, setText] = useState("");
@@ -36,12 +43,12 @@ export default function ChatWidget() {
         const trimmed = text.trim();
         if (!trimmed) return;
 
-        const user: Msg = { id: crypto.randomUUID(), role: "user", text: trimmed, ts: Date.now() };
+        const user: Msg = { id: makeId(), role: "user", text: trimmed, ts: Date.now() };
         setMsgs((m) => [...m, user]);
         setText("");
 
         // placeholder do bot
-        const botId = crypto.randomUUID();
+        const botId = makeId();
         setMsgs((m) => [...m, { id: botId, role: "bot", text: "", ts: Date.now() }]);
 
         // histórico (system é inserido no servidor)
