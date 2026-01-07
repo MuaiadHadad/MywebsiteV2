@@ -83,7 +83,7 @@ function Tag({ children }: { children: React.ReactNode }) {
 
 export default function SkillsSection() {
     return (
-        <section id="skills" className="relative isolate overflow-hidden bg-transparent text-neutral-100">
+        <section id="skills" className="section-skills relative isolate overflow-hidden bg-transparent text-neutral-100">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_600px_at_20%_0%,rgba(34,211,238,0.14),transparent_55%),radial-gradient(1000px_520px_at_80%_10%,rgba(124,58,237,0.16),transparent_55%),radial-gradient(circle_at_center,transparent,rgba(0,0,0,0.55))]" />
 
             <div className="relative mx-auto max-w-6xl px-6 py-20">

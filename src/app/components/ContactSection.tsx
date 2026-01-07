@@ -100,7 +100,7 @@ export default function ContactSection({ brand = BRAND }: { brand?: typeof BRAND
     }
 
     return (
-        <section id="contact" className="relative isolate overflow-hidden bg-transparent text-neutral-100">
+        <section id="contact" className="section-contact relative isolate overflow-hidden bg-transparent text-neutral-100">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(124,58,237,0.14),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(34,211,238,0.14),transparent_32%),radial-gradient(1200px_600px_at_20%_80%,rgba(16,185,129,0.10),transparent_60%)]" />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/6 via-transparent to-black/60 mix-blend-screen" />
 
