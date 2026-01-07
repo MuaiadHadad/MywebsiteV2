@@ -37,7 +37,7 @@ RUN pnpm build
 
 # Ensure Next.js browser assets exist for runtime (default stylesheet)
 RUN mkdir -p .next/browser \
- && cp node_modules/next/dist/server/app-render/default-stylesheet.css .next/browser/default-stylesheet.css
+ && printf "/* fallback default stylesheet to satisfy Next runtime */\n" > .next/browser/default-stylesheet.css
 
 # Production image, copy all the files and run next
 FROM base AS runner
