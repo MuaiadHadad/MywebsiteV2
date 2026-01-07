@@ -1,0 +1,30 @@
+# Dependencies
+node_modules
+
+# Environment files (keep these excluded for security)
+.env
+.env.local
+.env.production
+.env.development
+
+# Testing
+coverage
+.nyc_output
+
+# Next.js
+.next/
+out/
+
+# Misc
+.DS_Store
+*.pem
+.vscode
+.idea
+
+# Git
+.git
+.gitignore
+
+# Documentation
+*.md
+LICENSE

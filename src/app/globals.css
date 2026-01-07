@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+:root {
+  --background: radial-gradient(circle at 20% 20%, rgba(124,58,237,0.18), transparent 34%),
+    radial-gradient(circle at 78% 0%, rgba(34,211,238,0.16), transparent 34%),
+    radial-gradient(circle at 30% 70%, rgba(16,185,129,0.18), transparent 34%),
+    linear-gradient(160deg, #030712 0%, #050b1a 45%, #070e21 100%);
+  --foreground: #e8ecf7;
+  --panel: rgba(255,255,255,0.05);
+  --panel-strong: rgba(255,255,255,0.08);
+  --stroke: rgba(255,255,255,0.12);
+  --glow: rgba(34,211,238,0.25);
+  --accent: #7c3aed;
+  --accent-2: #22d3ee;
+  --radius: 18px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans, "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+  min-height: 100vh;
+}
+
+/* subtle noise and vignette helpers */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'%3E%3C/feTurbulence%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.22'/%3E%3C/svg%3E");
+  background-size: 320px 320px;
+  mix-blend-mode: soft-light;
+}
+.bg-vignette-strong { background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.52) 72%); }
+
+/* scan/grid softer for glass look */
+.bg-grid-a {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.06) 1px, transparent 0);
+  background-size: 48px 48px;
+  opacity: 0.18;
+}
+.bg-grid-b {
+  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mix-blend-mode: soft-light;
+  opacity: 0.12;
+}
+.bg-twinkle {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.2) 0 42%, transparent 42%);
+  background-size: 260px 260px;
+  opacity: 0.06;
+}
+.bg-scanlines { background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 100% 3px; opacity: 0.12; }
+.bg-vignette { background: radial-gradient(circle at center, transparent 42%, rgba(0,0,0,0.45) 76%); }
+
+/* Glass utilities */
+.glass {
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  backdrop-filter: blur(16px) saturate(130%);
+  border-radius: var(--radius);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.05), 0 0 30px var(--glow);
+}
+.glass-strong {
+  background: var(--panel-strong);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(20px) saturate(150%);
+}
+
+/* Scrollbar (keep thin, softer colors) */
+:root{
+    --sb-bg: rgba(255,255,255,0.02);
+    --sb-thumb: rgba(124,58,237,0.75);
+    --sb-thumb-ghost: rgba(124,58,237,0.35);
+    --sb-border: rgba(255,255,255,0.12);
+    --sb-radius: 12px;
+    --sb-size: 12px;
+}
+*{ scrollbar-width: thin; scrollbar-color: var(--sb-thumb) var(--sb-bg); }
+*::-webkit-scrollbar{ width: var(--sb-size); height: var(--sb-size); }
+*::-webkit-scrollbar-track{ background: var(--sb-bg); border: 1px solid var(--sb-border); border-radius: var(--sb-radius); }
+*::-webkit-scrollbar-thumb{
+    background: linear-gradient(180deg, var(--sb-thumb) 0%, rgba(34,211,238,0.8) 100%);
+    border-radius: var(--sb-radius);
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 12px var(--sb-thumb-ghost);
+}
+*::-webkit-scrollbar-thumb:hover{ filter: brightness(1.05); }
+*::-webkit-scrollbar-thumb:active{ filter: brightness(0.95); }
+
+/* Pixel title + card (kept for reuse) */
+.pixel-title { position: relative; display: inline-block; letter-spacing: 0.14em; font-size: 1rem; }
+.pixel-title::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -8px; height: 4px;
+    background: repeating-linear-gradient(90deg, rgba(124,58,237,.9) 0 10px, transparent 10px 14px);
+    box-shadow: 0 0 10px rgba(124,58,237,.35);
+}
+.pixel-card {
+    outline: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.45), 0 0 24px rgba(124,58,237,0.18);
+}
+.pixel-card:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 32px rgba(34,211,238,0.24); }
