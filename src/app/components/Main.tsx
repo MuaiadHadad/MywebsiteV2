@@ -67,7 +67,7 @@ export default function MainPixelHero() {
                                 src="/muaiad.jpg"
                                 alt="Muaiad Hadad"
                                 fill
-                                className="object-cover"
+                                className="object-cover object-[50%_30%]"
                                 style={{
                                     filter: 'contrast(1.1) brightness(0.95) saturate(1.2) hue-rotate(-10deg)',
                                 }}
@@ -129,7 +129,7 @@ export default function MainPixelHero() {
                                 src="/muaiad.jpg"
                                 alt="Muaiad Hadad"
                                 fill
-                                className="object-cover transition-transform duration-500 hover:scale-105"
+                                className="object-cover object-[50%_30%] transition-transform duration-500 hover:scale-105"
                                 style={{
                                     filter: 'contrast(1.15) brightness(0.92) saturate(1.25) hue-rotate(-12deg)',
                                 }}
