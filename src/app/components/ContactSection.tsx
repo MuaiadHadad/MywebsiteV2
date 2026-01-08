@@ -23,48 +23,51 @@ export default function ContactSection({ brand = BRAND }: { brand?: typeof BRAND
 
     async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-
-        // Anti-spam: prevent multiple submissions within 30 seconds
-        const now = Date.now();
-        const timeSinceLastSubmit = now - lastSubmitTime;
-        if (timeSinceLastSubmit < 30000 && lastSubmitTime !== 0) {
-            setState("error");
-            setMessage("Please wait 30 seconds before sending another message.");
-            setTimeout(() => {
-                setState("idle");
-                setMessage("");
-            }, 3000);
-            return;
-        }
-
-        setState("loading");
-        setMessage("");
-        const form = e.currentTarget as HTMLFormElement;
-        const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
-
-        // honeypot
-        if (data._hp) {
-            setState("success");
-            setMessage("Message sent successfully!");
-            form.reset();
-            setTimeout(() => {
-                setState("idle");
-                setMessage("");
-            }, 3000);
-            return;
-        }
-
-        if (!data.name || !data.email || !data.message) {
-            setState("error");
-            setMessage("Please fill in name, email and message.");
-            setTimeout(() => {
-                setState("idle");
-                setMessage("");
-            }, 3000);
-            return;
-        }
-
         try {
+            const now = Date.now();
+            const timeSinceLastSubmit = now - lastSubmitTime;
+            if (timeSinceLastSubmit < 30000 && lastSubmitTime !== 0) {
+                setState("error");
+                setMessage("Please wait 30 seconds before sending another message.");
+                setTimeout(() => {
+                    setState("idle");
+                    setMessage("");
+                }, 3000);
+                return;
+            }
+
+            setState("loading");
+            setMessage("");
+
+            const form = e.currentTarget as HTMLFormElement;
+            const formData = new FormData(form);
+            const data: Record<string, string> = {};
+            formData.forEach((value, key) => {
+                data[key] = typeof value === "string" ? value : ""; // normalize non-string values
+            });
+
+            // honeypot
+            if (data._hp) {
+                setState("success");
+                setMessage("Message sent successfully!");
+                form.reset();
+                setTimeout(() => {
+                    setState("idle");
+                    setMessage("");
+                }, 3000);
+                return;
+            }
+
+            if (!data.name || !data.email || !data.message) {
+                setState("error");
+                setMessage("Please fill in name, email and message.");
+                setTimeout(() => {
+                    setState("idle");
+                    setMessage("");
+                }, 3000);
+                return;
+            }
+
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -82,16 +85,14 @@ export default function ContactSection({ brand = BRAND }: { brand?: typeof BRAND
             setLastSubmitTime(now);
             form.reset();
 
-            // Reset to idle after 5 seconds
             setTimeout(() => {
                 setState("idle");
                 setMessage("");
             }, 5000);
         } catch (error) {
+            console.error("contact submit error", error);
             setState("error");
             setMessage("Something went wrong. Please try again or email me directly.");
-
-            // Reset to idle after 4 seconds
             setTimeout(() => {
                 setState("idle");
                 setMessage("");

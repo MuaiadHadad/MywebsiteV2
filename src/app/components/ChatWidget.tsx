@@ -9,8 +9,10 @@ type Msg = { id: string; role: "user" | "bot"; text: string; ts: number };
 type ChatMessage = { role: "system" | "user" | "assistant"; content: string };
 
 const makeId = () => {
-    const g = (globalThis as any)?.crypto?.randomUUID;
-    if (typeof g === "function") return g();
+    const cryptoObj = (globalThis as any)?.crypto;
+    if (cryptoObj && typeof cryptoObj.randomUUID === "function") {
+        return cryptoObj.randomUUID();
+    }
     // Fallback for older browsers without crypto.randomUUID
     return `id-${Math.random().toString(36).slice(2, 10)}-${Date.now()}`;
 };
