@@ -30,7 +30,7 @@ function isHash(href: string) {
 export default function NavBarWalrus({
                                          brand = "MUAIAD",
                                          items = SECTIONS,
-                                         logo = { src: "/Logo_muaiad.png", alt: "Muaiad" },
+                                         logo = { src: "/logo-mh.svg", alt: "Muaiad Hadad" },
                                      }: NavBarWalrusProps) {
     const pathname = usePathname();
     const [open, setOpen] = useState(false);
@@ -101,12 +101,12 @@ export default function NavBarWalrus({
         <span className="relative inline-block h-2 w-2 align-middle">
       <span
           className={`absolute inset-0 rounded-[2px] border ${
-              isActive ? "border-emerald-300" : "border-white/60"
+              isActive ? "border-blue-400" : "border-white/60"
           }`}
       />
       <span
           className={`absolute inset-0 rounded-[2px] ${
-              isActive ? "bg-emerald-300/70 animate-ping" : "bg-transparent group-hover:bg-emerald-300/60 group-hover:animate-ping"
+              isActive ? "bg-blue-400/70 animate-ping" : "bg-transparent group-hover:bg-blue-400/60 group-hover:animate-ping"
           } motion-reduce:animate-none`}
       />
     </span>
@@ -127,13 +127,15 @@ export default function NavBarWalrus({
             <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8">
                 {/* Brand */}
                 <div className="flex min-w-0 items-center gap-3">
-                    <div className="relative h-9 w-9 overflow-hidden rounded-xl border border-white/15 bg-white/5 shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
-                        <Image src={logo.src} alt={logo.alt ?? brand} fill className="object-contain p-1" sizes="36px" />
+                    <div className="relative h-12 w-44 overflow-hidden rounded-xl border border-white/15 bg-white/5 shadow-[0_10px_30px_rgba(0,0,0,0.35)] sm:h-14 sm:w-52">
+                        <Image src={logo.src} alt={logo.alt ?? brand} fill className="object-contain p-2" sizes="(max-width: 640px) 180px, 220px" />
                     </div>
-                    <div className="leading-tight">
+                    {/* Brand
+                    <div className="leading-tight hidden sm:block">
                         <div className="text-[11px] font-medium text-white/70">FULL STACK</div>
                         <div className="text-sm font-semibold tracking-wide text-white">{brand}</div>
                     </div>
+                    */}
                 </div>
 
                 {/* Desktop menu */}
@@ -151,7 +153,7 @@ export default function NavBarWalrus({
                             const content = (
                                 <span
                                     className={`inline-flex items-center gap-2 text-[13px] font-semibold tracking-wide whitespace-nowrap ${
-                                        isActive ? "text-emerald-200" : "text-white/85"
+                                        isActive ? "text-blue-300" : "text-white/85"
                                     }`}
                                 >
                   {pixelIndicator(!!isActive)}
@@ -165,14 +167,14 @@ export default function NavBarWalrus({
                                             href={item.href}
                                             target="_blank"
                                             rel="noreferrer noopener"
-                                            className="group transition-colors hover:text-emerald-300"
+                                            className="group transition-colors hover:text-blue-400"
                                         >
                                             {content}
                                         </a>
                                     ) : isHash(item.href) ? (
                                         <a
                                             href={item.href}
-                                            className="group transition-colors hover:text-emerald-300"
+                                            className="group transition-colors hover:text-blue-400"
                                             onClick={(e) => handleNavClick(e, item.href)}
                                         >
                                             {content}
@@ -180,7 +182,7 @@ export default function NavBarWalrus({
                                     ) : (
                                         <Link
                                             href={item.href}
-                                            className="group transition-colors hover:text-emerald-300"
+                                            className="group transition-colors hover:text-blue-400"
                                         >
                                             {content}
                                         </Link>
@@ -209,7 +211,7 @@ export default function NavBarWalrus({
             </div>
 
             {/* Pixel gradient ribbon */}
-            <div className="h-1 w-full bg-gradient-to-r from-violet-300 via-indigo-200 to-emerald-200" />
+            <div className="h-1 w-full bg-gradient-to-r from-violet-300 via-indigo-200 to-blue-300" />
 
             {/* Overlay mobile */}
             <div
@@ -233,10 +235,10 @@ export default function NavBarWalrus({
             >
                 <div className="flex h-16 items-center justify-between border-b border-white/10 px-4">
                     <div className="flex items-center gap-3">
-                        <div className="relative h-8 w-8 overflow-hidden rounded-lg border border-white/15 bg-white/5">
-                            <Image src={logo.src} alt={logo.alt ?? brand} fill className="object-contain p-1" sizes="32px" />
+                        <div className="relative h-10 w-36 overflow-hidden rounded-lg border border-white/15 bg-white/5">
+                            <Image src={logo.src} alt={logo.alt ?? brand} fill className="object-contain p-1.5" sizes="150px" />
                         </div>
-                        <span className="text-sm font-bold tracking-wider">{brand}</span>
+                        <span className="text-sm font-bold tracking-wider hidden">{brand}</span>
                     </div>
                     <button
                         type="button"
@@ -259,20 +261,20 @@ export default function NavBarWalrus({
                             const inner = (
                                 <span
                                     className={`flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-semibold transition-colors ${
-                                        isActive ? "text-emerald-200" : "text-white/90"
+                                        isActive ? "text-blue-300" : "text-white/90"
                                     } hover:bg-white/5 active:bg-white/10`}
                                 >
                   <span className="relative inline-block h-2 w-2">
                     <span
                         className={`absolute inset-0 rounded-[2px] border ${
-                            isActive ? "border-emerald-300" : "border-white/60"
+                            isActive ? "border-blue-400" : "border-white/60"
                         }`}
                     />
                     <span
                         className={`absolute inset-0 rounded-[2px] ${
                             isActive
-                                ? "bg-emerald-300/70 animate-ping"
-                                : "bg-transparent group-hover:bg-emerald-300/60 group-hover:animate-ping"
+                                ? "bg-blue-400/70 animate-ping"
+                                : "bg-transparent group-hover:bg-blue-400/60 group-hover:animate-ping"
                         } motion-reduce:animate-none`}
                     />
                   </span>

@@ -1,0 +1,32 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fgradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#0a0f1a"/>
+
+  <!-- Code brackets decorative -->
+  <path d="M 6 12 L 4 16 L 6 20" stroke="#60a5fa" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <path d="M 26 12 L 28 16 L 26 20" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Stylized FS (Full Stack) letters -->
+  <text x="16" y="21"
+        font-family="Arial, sans-serif"
+        font-size="14"
+        font-weight="900"
+        text-anchor="middle"
+        fill="url(#fgradient)">
+    FS
+  </text>
+
+  <!-- Decorative dots -->
+  <circle cx="11" cy="26" r="0.8" fill="#60a5fa" opacity="0.7"/>
+  <circle cx="16" cy="26" r="0.8" fill="#3b82f6" opacity="0.7"/>
+  <circle cx="21" cy="26" r="0.8" fill="#22d3ee" opacity="0.7"/>
+</svg>
+</svg>
+

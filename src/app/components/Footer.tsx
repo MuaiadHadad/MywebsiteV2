@@ -20,7 +20,7 @@ const LINKS = [
     { label: "Contact", href: "#contact" },
 ];
 
-const FOOTER_BRAND = { name: "Muaiad Hadad", role: "Full Stack", logo: { src: "/Logo_muaiad1.png", alt: "Muaiad" } };
+const FOOTER_BRAND = { name: "Muaiad Hadad", role: "Full Stack", logo: { src: "/logo-mh.svg", alt: "Muaiad Hadad" } };
 
 export default function Footer() {
     const [showTop, setShowTop] = useState(false);
@@ -74,13 +74,13 @@ export default function Footer() {
                     </div>
 
                     <nav aria-label="Footer" className="sm:col-span-2">
-                        <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200">Navigation</h3>
+                        <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-blue-300">Navigation</h3>
                         <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
                             {LINKS.map((l) => (
                                 <li key={l.href}>
                                     <a
                                         href={l.href}
-                                        className="text-neutral-300 hover:text-emerald-300 transition-colors"
+                                        className="text-neutral-300 hover:text-blue-400 transition-colors"
                                         onClick={(e) => scrollToHash(e, l.href)}
                                     >
                                         {l.label}
@@ -94,7 +94,7 @@ export default function Footer() {
                                 href={GITHUB}
                                 target="_blank"
                                 rel="noreferrer noopener"
-                                className="inline-flex items-center gap-2 rounded-xl border border-emerald-400/30 bg-emerald-600/15 px-3 py-2 text-xs font-bold text-emerald-200 shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition hover:translate-y-[1px] hover:bg-emerald-600/25"
+                                className="inline-flex items-center gap-2 rounded-xl border border-blue-400/30 bg-blue-600/15 px-3 py-2 text-xs font-bold text-blue-200 shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition hover:translate-y-[1px] hover:bg-blue-600/25"
                             >
                                 <Github className="h-4 w-4" />
                                 GITHUB
@@ -132,7 +132,7 @@ export default function Footer() {
                 type="button"
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 aria-label="Back to top"
-                className={`fixed bottom-24 right-5 z-[130] inline-flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-400/30 bg-emerald-600/20 text-emerald-200 shadow-[0_10px_30px_rgba(0,0,0,0.35)] backdrop-blur transition
+                className={`fixed bottom-24 right-5 z-[130] inline-flex h-10 w-10 items-center justify-center rounded-xl border border-blue-400/30 bg-blue-600/20 text-blue-200 shadow-[0_10px_30px_rgba(0,0,0,0.35)] backdrop-blur transition
           ${showTop ? "opacity-100 translate-y-0" : "pointer-events-none opacity-0 translate-y-2"}`}
             >
                 <ArrowUp className="h-5 w-5" />

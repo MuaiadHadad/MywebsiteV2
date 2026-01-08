@@ -123,7 +123,7 @@ export default function ChatWidget() {
             <button
                 onClick={() => setOpen((v) => !v)}
                 aria-label={open ? "Close chat" : "Open chat"}
-                className="fixed bottom-5 right-5 z-[120] inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500 text-neutral-900 shadow-lg transition hover:translate-y-[1px] focus:outline-none"
+                className="fixed bottom-5 right-5 z-[120] inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500 text-neutral-900 shadow-lg transition hover:translate-y-[1px] focus:outline-none"
             >
                 {open ? <X className="h-5 w-5" /> : <MessageCircle className="h-5 w-5" />}
             </button>
@@ -139,7 +139,7 @@ export default function ChatWidget() {
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/40" />
 
                     <div className="flex items-center justify-between gap-2 px-3 py-2">
-                        <div className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-200">Chatbot</div>
+                        <div className="text-xs font-semibold uppercase tracking-[0.24em] text-blue-300">Chatbot</div>
                         <div className="flex items-center gap-2">
                             {loading && <span className="text-[10px] text-neutral-400">thinking…</span>}
                             {loading && (
@@ -183,11 +183,11 @@ export default function ChatWidget() {
                             onKeyDown={handleKey}
                             rows={1}
                             placeholder="Type a message…"
-                            className="h-9 w-full resize-none rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-sm text-neutral-100 placeholder-neutral-500 outline-none focus:border-emerald-400/40"
+                            className="h-9 w-full resize-none rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-sm text-neutral-100 placeholder-neutral-500 outline-none focus:border-blue-400/40"
                         />
                         <button
                             type="submit"
-                            className="inline-flex h-9 items-center justify-center rounded-xl bg-emerald-500 px-3 text-sm font-semibold text-neutral-900 shadow-md transition hover:translate-y-[1px] disabled:opacity-50"
+                            className="inline-flex h-9 items-center justify-center rounded-xl bg-blue-500 px-3 text-sm font-semibold text-neutral-900 shadow-md transition hover:translate-y-[1px] disabled:opacity-50"
                             disabled={!text.trim()}
                             aria-label="Send"
                             title="Send"
@@ -218,7 +218,7 @@ function Bubble({ role, text }: { role: "user" | "bot"; text: string }) {
             <div
                 className={`max-w-[85%] rounded-2xl px-3 py-2 text-sm leading-snug shadow-md backdrop-blur ${
           isUser
-                    ? "bg-emerald-600/20 text-emerald-100 border border-emerald-400/30"
+                    ? "bg-blue-600/20 text-blue-100 border border-blue-400/30"
                     : "bg-white/8 text-neutral-100 border border-white/10"}
           ${isUser ? "whitespace-pre-wrap" : "whitespace-normal"} break-words [overflow-wrap:anywhere]`}
             >

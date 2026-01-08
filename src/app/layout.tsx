@@ -10,9 +10,9 @@ export const metadata: Metadata = {
     title: "Muaiad Hadad | Portfolio",
     description: "Portfolio de Muaiad Hadad — Full Stack Developer.",
     icons: {
-        icon: "/Logo_muaiad1.png",
-        shortcut: "/Logo_muaiad1.png",
-        apple: "/Logo_muaiad1.png",
+        icon: "/favicon.svg",
+        shortcut: "/favicon.svg",
+        apple: "/logo-mh.svg",
     },
 };
 

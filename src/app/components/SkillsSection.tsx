@@ -108,7 +108,7 @@ export default function SkillsSection() {
                             className="rounded-2xl border border-white/10 bg-white/6 p-5 shadow-[0_16px_50px_rgba(0,0,0,0.45)] backdrop-blur"
                         >
                             <div className="flex items-center gap-3 text-neutral-200">
-                                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-emerald-200 ring-1 ring-white/10">
+                                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-blue-300 ring-1 ring-white/10">
                                     {section.icon}
                                 </span>
                                 <h3 className="text-sm font-semibold uppercase tracking-widest text-neutral-100/80">{section.title}</h3>

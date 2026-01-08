@@ -22,7 +22,7 @@ export default function App() {
     return (
         <>
             <NavBar
-                logo={{ src: "/Logo_muaiad1.png", alt: "Muaiad" }}
+                logo={{ src: "/logo-mh.svg", alt: "Muaiad Hadad" }}
                 brand="MUAIAD HADAD"
             />
             <MainPixelHero />
@@ -31,7 +31,7 @@ export default function App() {
             <EducationTraining />
             <SkillsSection />
             <ProjectsPixelGrid />
-            <ContactSection brand={{ name: "Muaiad Hadad", logo: { src: "/Logo_muaiad1.png", alt: "Muaiad logo" } }} />
+            <ContactSection brand={{ name: "Muaiad Hadad", logo: { src: "/logo-mh.svg", alt: "Muaiad Hadad logo" } }} />
             <ChatWidget />
             <Footer />
 

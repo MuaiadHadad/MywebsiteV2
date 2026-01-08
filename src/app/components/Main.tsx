@@ -30,7 +30,7 @@ export default function MainPixelHero() {
                         initial={{ y: 18, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ type: "spring", stiffness: 120, damping: 14 }}
-                        className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-emerald-200 shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
+                        className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-blue-200 shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
                     >
                         <Sparkles className="h-4 w-4" />
                         Full Stack • AI • DevOps
@@ -42,8 +42,8 @@ export default function MainPixelHero() {
                         transition={{ type: "spring", stiffness: 120, damping: 12 }}
                         className="text-balance text-4xl font-black leading-tight tracking-tight md:text-5xl"
                     >
-                        Muaiad Hadad —
-                        <span className="block text-emerald-200">Building reliable, elegant software</span>
+                        Muaiad Hadad -
+                        <span className="block text-blue-300">Building reliable, elegant software</span>
                     </motion.h1>
 
                     <motion.p
@@ -83,7 +83,7 @@ export default function MainPixelHero() {
                     <div className="flex flex-wrap gap-3">
                         <a
                             href="#projects"
-                            className="inline-flex items-center gap-2 rounded-xl border border-emerald-400/40 bg-emerald-500/20 px-5 py-2.5 text-sm font-semibold text-emerald-100 shadow-lg transition hover:translate-y-[1px] hover:bg-emerald-500/25"
+                            className="inline-flex items-center gap-2 rounded-xl border border-blue-400/40 bg-blue-500/20 px-5 py-2.5 text-sm font-semibold text-blue-100 shadow-lg transition hover:translate-y-[1px] hover:bg-blue-500/25"
                         >
                             Ver projetos
                             <ArrowRight className="h-4 w-4" />
@@ -105,7 +105,7 @@ export default function MainPixelHero() {
                                 onFocus={() => setActive(skill)}
                                 className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition backdrop-blur ${
                                     active === skill
-                                        ? "border-emerald-400/50 bg-emerald-500/20 text-emerald-100"
+                                        ? "border-blue-400/50 bg-blue-500/20 text-blue-100"
                                         : "border-white/10 bg-white/5 text-white/80 hover:border-white/20"
                                 }`}
                             >
@@ -165,7 +165,7 @@ export default function MainPixelHero() {
                                 </span>
                             ))}
                         </div>
-                        <div className="mt-6 rounded-2xl border border-emerald-400/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-50 shadow-[0_10px_40px_rgba(16,185,129,0.25)]">
+                        <div className="mt-6 rounded-2xl border border-blue-400/30 bg-blue-500/10 px-4 py-3 text-sm text-blue-50 shadow-[0_10px_40px_rgba(59,130,246,0.35)]">
                             Atualmente focado em IA aplicada, integrações LLM e serviços escaláveis.
                         </div>
                     </div>

@@ -100,7 +100,7 @@ function DownloadButton({ file, children }: { file: string; children: React.Reac
                 }
             }}
             disabled={busy}
-            className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1.5 text-[12px] font-semibold text-emerald-100 transition hover:bg-emerald-400/15 active:translate-y-px disabled:opacity-50"
+            className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-400/10 px-3 py-1.5 text-[12px] font-semibold text-blue-100 transition hover:bg-blue-400/15 active:translate-y-px disabled:opacity-50"
             title={busy ? "A gerar link..." : "Download"}
         >
             <Download className="h-4 w-4" />
@@ -124,12 +124,12 @@ export default function EducationTraining() {
                     transition={{ type: "spring", stiffness: 120, damping: 14 }}
                     className="text-balance text-4xl font-black tracking-tight md:text-5xl"
                 >
-                    Education <span className="text-emerald-300">& Training</span>
+                    Education <span className="text-blue-400">& Training</span>
                 </motion.h2>
 
                 {/* Education timeline */}
                 <div className="relative mt-12">
-                    <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-400/50 via-emerald-300/10 to-transparent md:left-1/2" />
+                    <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-blue-400/50 via-blue-400/10 to-transparent md:left-1/2" />
                     <ol className="space-y-10">
                         {education.map((ed, i) => {
                             const left = i % 2 === 0;
@@ -149,7 +149,7 @@ export default function EducationTraining() {
                                                     <h3 className="text-lg font-semibold text-white">{ed.title}</h3>
                                                     <p className="text-xs text-neutral-400">{ed.meta}</p>
                                                 </div>
-                                                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-200 ring-1 ring-emerald-300/40">
+                                                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/15 text-blue-300 ring-1 ring-blue-400/40">
                                                     <GraduationCap className="h-5 w-5" />
                                                 </span>
                                             </div>
@@ -166,7 +166,7 @@ export default function EducationTraining() {
                                             <ul className="mt-4 space-y-2 text-sm text-neutral-200/90">
                                                 {ed.highlights.map((h) => (
                                                     <li key={h} className="flex gap-2">
-                                                        <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-emerald-300" />
+                                                        <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-blue-400" />
                                                         {h}
                                                     </li>
                                                 ))}
@@ -178,7 +178,7 @@ export default function EducationTraining() {
                                                 </div>
                                             ) : null}
 
-                                            <span className="pointer-events-none absolute -left-3 top-6 hidden h-6 w-6 rounded-full bg-emerald-400/40 blur-lg md:block" />
+                                            <span className="pointer-events-none absolute -left-3 top-6 hidden h-6 w-6 rounded-full bg-blue-400/40 blur-lg md:block" />
                                         </motion.article>
                                     </div>
                                     <div className="hidden w-1/2 px-6 md:block" aria-hidden>
@@ -189,7 +189,7 @@ export default function EducationTraining() {
                                             transition={{ delay: 0.05, type: "spring", stiffness: 200, damping: 18 }}
                                             className="rounded-2xl border border-white/8 bg-white/4 p-4 text-sm text-neutral-200 shadow-[0_12px_40px_rgba(0,0,0,0.35)] backdrop-blur"
                                         >
-                                            <div className="flex items-center gap-2 text-emerald-200">
+                                            <div className="flex items-center gap-2 text-blue-300">
                                                 <Award className="h-4 w-4" />
                                                 Certificados
                                             </div>
@@ -218,7 +218,7 @@ export default function EducationTraining() {
                                     <p className="text-xs uppercase tracking-[0.2em] text-white/60">{t.provider}</p>
                                     <h3 className="text-sm font-semibold text-white">{t.name}</h3>
                                 </div>
-                                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-200 ring-1 ring-emerald-300/40">
+                                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/15 text-blue-300 ring-1 ring-blue-400/40">
                                     <BookOpen className="h-5 w-5" />
                                 </span>
                             </div>

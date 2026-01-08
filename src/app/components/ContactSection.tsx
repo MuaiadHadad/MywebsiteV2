@@ -14,7 +14,7 @@ const CONTACTS = {
     linkedin: "https://www.linkedin.com/in/muaiad-hadad/",
     website: "https://muaiadhadad.me",
 };
-const BRAND = { name: "Muaiad Hadad", logo: { src: "/Logo_muaiad1.png", alt: "Muaiad logo" } };
+const BRAND = { name: "Muaiad Hadad", logo: { src: "/logo-mh.svg", alt: "Muaiad Hadad logo" } };
 
 export default function ContactSection({ brand = BRAND }: { brand?: typeof BRAND }) {
     const [state, setState] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -112,7 +112,7 @@ export default function ContactSection({ brand = BRAND }: { brand?: typeof BRAND
                     transition={{ type: "spring", stiffness: 120, damping: 14 }}
                     className="text-balance text-4xl font-black tracking-tight md:text-5xl"
                 >
-                    Contact <span className="text-emerald-300">Me</span>
+                    Contact <span className="text-blue-400">Me</span>
                 </motion.h2>
 
                 <div className="mt-10 grid items-stretch gap-8 md:grid-cols-12">
@@ -133,7 +133,7 @@ export default function ContactSection({ brand = BRAND }: { brand?: typeof BRAND
                         />
 
                         <div className="flex items-center gap-3 text-neutral-200">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-200 ring-1 ring-emerald-400/30">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/15 text-blue-300 ring-1 ring-blue-400/30">
                                 <Mail className="h-5 w-5" />
                             </div>
                             <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-200/80">
@@ -148,7 +148,7 @@ export default function ContactSection({ brand = BRAND }: { brand?: typeof BRAND
                             <ContactRow icon={<Globe2 className="h-4 w-4" />} label={CONTACTS.website.replace(/^https?:\/\//, "")} href={CONTACTS.website} external />
                         </ul>
 
-                        <span className="pointer-events-none absolute -right-12 -bottom-12 h-48 w-48 rounded-full bg-emerald-500/20 blur-3xl" />
+                        <span className="pointer-events-none absolute -right-12 -bottom-12 h-48 w-48 rounded-full bg-blue-500/20 blur-3xl" />
                     </motion.aside>
 
                     <motion.form
@@ -195,7 +195,7 @@ export default function ContactSection({ brand = BRAND }: { brand?: typeof BRAND
                             <button
                                 type="submit"
                                 disabled={state === "loading"}
-                                className="rounded-xl border border-emerald-400/40 bg-gradient-to-r from-emerald-500/30 via-emerald-400/25 to-cyan-400/25 px-6 py-2.5 font-semibold text-emerald-100 shadow-[0_10px_30px_rgba(0,0,0,0.35),0_0_24px_rgba(16,185,129,0.35)] transition hover:translate-y-[1px] hover:from-emerald-400/35 hover:to-cyan-300/30 disabled:opacity-60"
+                                className="rounded-xl border border-blue-400/40 bg-gradient-to-r from-blue-500/30 via-blue-400/25 to-cyan-400/25 px-6 py-2.5 font-semibold text-blue-100 shadow-[0_10px_30px_rgba(0,0,0,0.35),0_0_24px_rgba(59,130,246,0.35)] transition hover:translate-y-[1px] hover:from-blue-400/35 hover:to-cyan-300/30 disabled:opacity-60"
                             >
                                 {state === "loading" ? "Sending…" : "Send message"}
                             </button>
@@ -217,7 +217,7 @@ export default function ContactSection({ brand = BRAND }: { brand?: typeof BRAND
                                     exit={{ y: 20, opacity: 0 }}
                                     className={`pointer-events-none absolute bottom-4 right-4 rounded-xl border px-3 py-2 text-sm backdrop-blur ${
                                         state === "success"
-                                            ? "border-emerald-400/30 bg-emerald-600/15 text-emerald-200"
+                                            ? "border-blue-400/30 bg-blue-600/15 text-blue-300"
                                             : "border-rose-400/30 bg-rose-600/15 text-rose-200"
                                     }`}
                                 >
@@ -238,10 +238,10 @@ function ContactRow({ icon, label, href, external }: { icon: React.ReactNode; la
     const props = external ? { target: "_blank", rel: "noreferrer" } : {};
     return (
         <li className="flex items-center gap-3">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/8 text-emerald-200 ring-1 ring-white/10">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/8 text-blue-300 ring-1 ring-white/10">
                 {icon}
             </span>
-            <a className="text-sm font-medium text-white/90 underline decoration-emerald-400/60 decoration-2 underline-offset-4 hover:text-emerald-200" href={href} {...props}>
+            <a className="text-sm font-medium text-white/90 underline decoration-blue-400/60 decoration-2 underline-offset-4 hover:text-blue-300" href={href} {...props}>
                 {label}
             </a>
         </li>
@@ -279,7 +279,7 @@ function Field({
                 placeholder={placeholder}
                 autoComplete={autoComplete}
                 required={name === "name" || name === "email" || name === "message"}
-                className="w-full rounded-xl border border-white/10 bg-neutral-900/60 px-3 py-2 text-sm text-neutral-100 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] outline-none transition placeholder:text-neutral-500 focus:border-emerald-400/40 focus:shadow-[0_0_0_4px_rgba(16,185,129,0.12),inset_0_1px_0_0_rgba(255,255,255,0.05)]"
+                className="w-full rounded-xl border border-white/10 bg-neutral-900/60 px-3 py-2 text-sm text-neutral-100 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] outline-none transition placeholder:text-neutral-500 focus:border-blue-400/40 focus:shadow-[0_0_0_4px_rgba(59,130,246,0.12),inset_0_1px_0_0_rgba(255,255,255,0.05)]"
             />
         </label>
     );

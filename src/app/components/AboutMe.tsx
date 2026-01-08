@@ -18,7 +18,7 @@ export default function AboutMe() {
                     transition={{ type: "spring", stiffness: 120, damping: 14 }}
                     className="text-balance text-4xl font-black tracking-tight md:text-5xl"
                 >
-                    About <span className="text-emerald-300">Muaiad</span>
+                    About <span className="text-blue-400">Muaiad</span>
                 </motion.h2>
 
                 {/* narrative */}
@@ -55,7 +55,7 @@ export default function AboutMe() {
                     <div className="mt-4 grid gap-3 lg:grid-cols-2">
                         {["Accommodation Manager — Laravel/Blade app for housing flows.", "Job-Listing-API — end-to-end demo (API + UI).", "NewSwissAI — Vue-powered site prototype.", "MineDefender — Python prototype with a security angle.", "BioVision — DeepVision site polish & UI.", "Surveillance System — Python pipeline experiments."].map((text) => (
                             <span key={text} className="flex items-start gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-neutral-200">
-                                <Sparkles className="mt-0.5 h-4 w-4 text-emerald-300" />
+                                <Sparkles className="mt-0.5 h-4 w-4 text-blue-400" />
                                 {text}
                             </span>
                         ))}
@@ -82,7 +82,7 @@ export default function AboutMe() {
                             className="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-[0_14px_40px_rgba(0,0,0,0.45)]"
                         >
                             <div className="mb-2 flex items-center gap-2 text-neutral-300">
-                                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/8 text-emerald-200 ring-1 ring-white/10">
+                                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/8 text-blue-300 ring-1 ring-white/10">
                                     {c.icon}
                                 </span>
                                 <span className="text-sm font-semibold uppercase tracking-widest text-neutral-300/80">

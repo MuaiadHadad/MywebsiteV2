@@ -135,7 +135,7 @@ export default function ProjectsPixelGrid() {
                         href={`https://github.com/${GH_USER}`}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="inline-flex items-center gap-2 rounded-xl border border-emerald-400/40 bg-emerald-500/20 px-3 py-2 text-xs font-bold text-emerald-200 shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition hover:translate-y-[1px] hover:bg-emerald-500/25"
+                        className="inline-flex items-center gap-2 rounded-xl border border-blue-400/40 bg-blue-500/20 px-3 py-2 text-xs font-bold text-blue-200 shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition hover:translate-y-[1px] hover:bg-blue-500/25"
                     >
                         <Github className="h-4 w-4" />
                         VIEW GITHUB
@@ -167,7 +167,7 @@ export default function ProjectsPixelGrid() {
                                     setSelectedCategory("All");
                                     setSelectedTech(null);
                                 }}
-                                className="text-xs text-emerald-400 hover:text-emerald-300 transition-colors underline"
+                                className="text-xs text-blue-400 hover:text-blue-300 transition-colors underline"
                             >
                                 Clear filters
                             </button>
@@ -240,10 +240,10 @@ export default function ProjectsPixelGrid() {
                                             <span aria-hidden className="pointer-events-none absolute -top-1/2 left-0 z-0 h-[220%] w-1/3 rotate-12 bg-gradient-to-b from-white/12 via-white/5 to-transparent opacity-0 transition-opacity duration-500" />
                                             <div className="relative z-10">
                                                 <div className="flex items-baseline justify-between gap-3">
-                                                    <h4 className="text-[13px] font-extrabold leading-tight text-emerald-200 uppercase tracking-widest">
+                                                    <h4 className="text-[13px] font-extrabold leading-tight text-blue-300 uppercase tracking-widest">
                                                         {p.title}
                                                     </h4>
-                                                    <span className="rounded-[6px] border border-emerald-300/30 px-2 py-1 text-[10px] text-emerald-200/90">
+                                                    <span className="rounded-[6px] border border-blue-400/30 px-2 py-1 text-[10px] text-blue-300/90">
                                                         {p.period ?? "—"}
                                                     </span>
                                                 </div>
@@ -272,7 +272,7 @@ export default function ProjectsPixelGrid() {
                                                 {(p.href || p.repo) && (
                                                     <div className="mt-5 flex items-center gap-3 text-xs font-semibold">
                                                         {p.href && (
-                                                            <a href={p.href} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 text-emerald-300 hover:underline">
+                                                            <a href={p.href} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 text-blue-400 hover:underline">
                                                                 LIVE <ExternalLink className="h-3.5 w-3.5" />
                                                             </a>
                                                         )}

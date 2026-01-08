@@ -78,7 +78,7 @@ export default function WorkExperience() {
                 </motion.h2>
 
                 <div className="relative mt-12">
-                    <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-400/50 via-emerald-300/10 to-transparent md:left-1/2" />
+                    <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-blue-400/50 via-blue-400/10 to-transparent md:left-1/2" />
                     <ol className="space-y-10">
                         {jobs.map((job, i) => {
                             const left = i % 2 === 0;
@@ -97,7 +97,7 @@ export default function WorkExperience() {
                                                     <p className="text-xs uppercase tracking-[0.2em] text-white/60">{job.company}</p>
                                                     <h3 className="text-lg font-semibold text-white">{job.role}</h3>
                                                 </div>
-                                                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-200 ring-1 ring-emerald-300/40">
+                                                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/15 text-blue-300 ring-1 ring-blue-400/40">
                                                     <Briefcase className="h-5 w-5" />
                                                 </span>
                                             </div>
@@ -116,7 +116,7 @@ export default function WorkExperience() {
                                             <ul className="mt-4 space-y-2 text-sm text-neutral-200/90">
                                                 {job.bullets.map((b) => (
                                                     <li key={b} className="flex gap-2">
-                                                        <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-emerald-300" />
+                                                        <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-blue-400" />
                                                         {b}
                                                     </li>
                                                 ))}
@@ -128,7 +128,7 @@ export default function WorkExperience() {
                                                 ))}
                                             </div>
 
-                                            <span className="pointer-events-none absolute -left-3 top-6 hidden h-6 w-6 rounded-full bg-emerald-400/40 blur-lg md:block" />
+                                            <span className="pointer-events-none absolute -left-3 top-6 hidden h-6 w-6 rounded-full bg-blue-400/40 blur-lg md:block" />
                                         </motion.article>
                                     </div>
                                     <div className="hidden w-1/2 px-6 md:block" aria-hidden>
@@ -139,7 +139,7 @@ export default function WorkExperience() {
                                             transition={{ delay: 0.05, type: "spring", stiffness: 200, damping: 18 }}
                                             className="rounded-2xl border border-white/8 bg-white/4 p-4 text-sm text-neutral-200 shadow-[0_12px_40px_rgba(0,0,0,0.35)] backdrop-blur"
                                         >
-                                            <div className="flex items-center gap-2 text-emerald-200">
+                                            <div className="flex items-center gap-2 text-blue-300">
                                                 <Code2 className="h-4 w-4" />
                                                 Destaques
                                             </div>
